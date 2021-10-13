@@ -1,0 +1,15 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: database-destination
+  namespace: dest
+spec:
+  trigger:
+    schedule: "*/5 * * * *"
+  rclone:
+    destinationPVC: mysql-pv-claim
+    rcloneConfigSection: "aws-s3-bucket"
+    rcloneDestPath: "my-volsync-bucket"
+    rcloneConfig: "rclone-secret"
+    copyMethod: None
