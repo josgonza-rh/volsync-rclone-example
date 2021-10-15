@@ -1,6 +1,5 @@
-[[rules]]
-	description = "AWS secret key regardless of labeling"
-	regex = '''.?[A-Za-z0-9\\+=]{40}.?'''
-	[rules.allowlist]
-                description = "41 base64 characters is not an AWS secret key"
-		regexes = ['''[A-Za-z0-9\\+=]{41}''']
+[allowlist]
+  description = "Allowlist"
+  paths = [
+    '''example\/rclone.conf''',
+  ]
